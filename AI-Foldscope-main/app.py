@@ -15,9 +15,13 @@ uploaded_file = st.file_uploader("Chosose an image", type=["png", "jpg", "jpeg",
 if uploaded_file is not None:
 	try:
 		image = Image.open(uploaded_file)
+		img_array = np.array(image)
 	except Exception as e:
 		st.error(f"Error opening image: {e}")
 	else:
 		if st.button("View"):
-			st.image(image, width=700)
-			st.write("Uploaded Image:")
+			st.image(image, width=700, caption="Original Image")
+			with st.spinner("Running YOLOv8..."):
+        		results = model(img_array, conf=0.4)
+			annotated = results[0].plot()
+    		st.image(annotated, caption="Detected Objects", use_column_width=True)
