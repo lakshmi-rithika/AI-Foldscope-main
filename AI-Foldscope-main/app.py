@@ -25,5 +25,9 @@ if uploaded_file is not None:
 			st.image(image, width=700, caption="Original Image")
 			with st.spinner("Running YOLOv8..."):
 				results = model(img_array, conf=0.5)
+				for box in results[0].boxes:
+					cls_id = int(box.cls[0])
+					cls_name = model.names[cls_id]
+					st.write(f"Detected: {cls_name}")
 			annotated = results[0].plot()
 			st.image(annotated, caption="Detected Objects", use_column_width=True)
