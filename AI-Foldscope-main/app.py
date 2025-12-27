@@ -2,6 +2,9 @@ import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
 
+@st.cache_resource
+def load_model():
+    return YOLO("best.pt")  # custom trained model
 
 st.title("AI Foldscope Application")
 st.header("Upload and View an Image")
