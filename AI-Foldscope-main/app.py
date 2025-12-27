@@ -5,7 +5,7 @@ from PIL import Image
 
 @st.cache_resource
 def load_model():
-    return YOLO("best.pt")  # custom trained model
+    return YOLO("best-aavi.pt")  # custom trained model
 
 st.title("AI Foldscope Application")
 st.header("Upload File and View an Image")
