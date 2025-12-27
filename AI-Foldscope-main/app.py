@@ -25,7 +25,7 @@ if uploaded_file is not None:
 			st.image(image, width=700, caption="Original Image")
 			st.write("class names", model.names)
 			with st.spinner("Running YOLOv8..."):
-				results = model(img_array, conf=0.1)
+				results = model(img_array, conf=0.5)
 				for box in results[0].boxes:
 					cls_id = int(box.cls[0])
 					cls_name = model.names[cls_id]
