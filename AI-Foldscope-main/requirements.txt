@@ -1,4 +1,5 @@
 streamlit
+numpy
 # ultralytics core dependencies (example, check official docs for full list)
 torch
 torchvision
