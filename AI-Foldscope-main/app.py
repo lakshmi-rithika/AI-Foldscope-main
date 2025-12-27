@@ -18,12 +18,12 @@ if uploaded_file is not None:
 		image = Image.open(uploaded_file)
 		img_array = np.array(image)
 		model = load_model()
-		st.write("class names", model.names)
 	except Exception as e:
 		st.error(f"Error opening image: {e}")
 	else:
 		if st.button("View"):
 			st.image(image, width=700, caption="Original Image")
+			st.write("class names", model.names)
 			with st.spinner("Running YOLOv8..."):
 				results = model(img_array, conf=0.1)
 				for box in results[0].boxes:
@@ -32,3 +32,4 @@ if uploaded_file is not None:
 					st.write(f"Detected: {cls_name}")
 			annotated = results[0].plot()
 			st.image(annotated, caption="Detected Objects", use_column_width=True)
+
