@@ -1,2 +1,14 @@
 streamlit
-pip install -U ultralytics
+# ultralytics core dependencies (example, check official docs for full list)
+torch
+torchvision
+numpy
+matplotlib
+polars
+pyyaml
+pillow
+psutil
+requests
+scipy
+ultralytics-thop
+opencv-python-headless
