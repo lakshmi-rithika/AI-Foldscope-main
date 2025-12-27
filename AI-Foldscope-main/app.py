@@ -18,6 +18,7 @@ if uploaded_file is not None:
 		image = Image.open(uploaded_file)
 		img_array = np.array(image)
 		model = load_model()
+		st.write("class names", model.names)
 	except Exception as e:
 		st.error(f"Error opening image: {e}")
 	else:
