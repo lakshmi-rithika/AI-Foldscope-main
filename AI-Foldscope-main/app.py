@@ -7,7 +7,7 @@ def load_model():
     return YOLO("best.pt")  # custom trained model
 
 st.title("AI Foldscope Application")
-st.header("Upload and View an Image")
+st.header("Upload the File and View an Image")
 st.subheader("This application takes a picture as input and analyzes it using AI techniques.")
 
 uploaded_file = st.file_uploader("Chosose an image", type=["png", "jpg", "jpeg", "gif", "bmp"])
