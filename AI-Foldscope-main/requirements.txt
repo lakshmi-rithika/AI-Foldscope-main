@@ -14,3 +14,4 @@ requests
 scipy
 ultralytics-thop
 opencv-python-headless
+libgl1
