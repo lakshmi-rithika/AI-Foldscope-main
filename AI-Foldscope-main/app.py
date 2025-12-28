@@ -16,7 +16,7 @@ uploaded_file = st.file_uploader("Choose an Image", type=["png", "jpg", "jpeg", 
 if uploaded_file is not None:
 	try:
 		image = Image.open(uploaded_file)
-		#img_array = np.array(image)
+		img_array = np.array(image)
 		model = load_model()
 	except Exception as e:
 		st.error(f"Error opening image: {e}")
@@ -25,8 +25,8 @@ if uploaded_file is not None:
 			st.image(image, width=700, caption="Original Image")
 			st.write("class names", model.names)
 			with st.spinner("Running YOLOv8..."):
-				#results = model(image_array, conf=0.5)
-				results = model(uploaded_file, conf=0.01)
+				results = model(image_array, conf=0.5)
+				#results = model(uploaded_file, conf=0.01)
 				st.write(results)
 				for box in results[0].boxes:
 					cls_id = int(box.cls[0])
