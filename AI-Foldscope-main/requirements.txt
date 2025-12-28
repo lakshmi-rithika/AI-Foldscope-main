@@ -1,15 +1,19 @@
 streamlit
 numpy
-# ultralytics core dependencies (example, check official docs for full list)
+
+# YOLO
 ultralytics
-opencv-python-headless
+
+# FORCE headless OpenCV on Linux (Streamlit Cloud)
+opencv-python-headless>=4.8
+opencv-python==4.12.0.88; platform_system=="Windows"
+
+# Torch CPU (Streamlit is CPU-only)
 torch
 torchvision
-numpy
-matplotlib
-polars
-pyyaml
+
 pillow
 psutil
 requests
 scipy
+pyyaml
