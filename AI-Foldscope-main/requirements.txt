@@ -2,6 +2,7 @@ streamlit
 numpy
 # ultralytics core dependencies (example, check official docs for full list)
 ultralytics
+opencv-python-headless
 torch
 torchvision
 numpy
@@ -12,5 +13,3 @@ pillow
 psutil
 requests
 scipy
-ultralytics-thop
-opencv-python-headless
