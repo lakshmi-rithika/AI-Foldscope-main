@@ -5,7 +5,7 @@ from PIL import Image
 
 @st.cache_resource
 def load_model():
-    return YOLO("best-aavi.pt")  # custom trained model
+    return YOLO("best-pooja.pt")  # custom trained model
 
 st.title("AI Foldscope Application")
 st.header("Upload the File and View an Image")
@@ -27,7 +27,7 @@ if uploaded_file is not None:
 			st.write("class names", model.names)
 			with st.spinner("Running YOLOv8..."):
 				#results = model(image_array, conf=0.5)
-				results = model(uploaded_file, conf=0.1)
+				results = model(uploaded_file, conf=0.01)
 				st.write(results)
 				#for box in results[0].boxes:
 				#	cls_id = int(box.cls[0])
