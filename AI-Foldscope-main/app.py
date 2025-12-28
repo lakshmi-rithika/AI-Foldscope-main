@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from ultralytics-thop import YOLO
+from ultralytics import YOLO
 from PIL import Image
 
 @st.cache_resource
