@@ -4,8 +4,8 @@ from ultralytics import YOLO
 from PIL import Image
 
 @st.cache_resource
-#def load_model():
-    #return YOLO("best-aavi.pt")  # custom trained model
+def load_model():
+    return YOLO("best-aavi.pt")  # custom trained model
 
 st.title("AI Foldscope Application")
 st.header("Upload the File and View an Image")
@@ -17,7 +17,7 @@ if uploaded_file is not None:
 	try:
 		image = Image.open(uploaded_file)
 		## img_array = np.array(image)
-		model = load_model(return YOLO("best-aavi.pt"))
+		model = load_model()
 	except Exception as e:
 		#st.error(f"Error opening image: {e}")
 		st.error("Error opening image: {e}")
