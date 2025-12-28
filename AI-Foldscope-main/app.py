@@ -11,7 +11,7 @@ st.title("AI Foldscope Application")
 st.header("Upload the File and View an Image")
 st.subheader("This application takes a picture as input and analyzes it using AI techniques.")
 
-uploaded_file = st.file_uploader("Choose an image", type=["png", "jpg", "jpeg", "gif", "bmp"])
+uploaded_file = st.file_uploader("Choose an Image", type=["png", "jpg", "jpeg", "gif", "bmp"])
 
 if uploaded_file is not None:
 	try:
